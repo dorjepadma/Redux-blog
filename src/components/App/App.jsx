@@ -1,9 +1,6 @@
 import React from 'react';
-import Blog from '../Blog/Blog';
 
-const App = () => (
-  <Blog /> 
-);
-
-export default App;
+export default function App() {
+  return <h1>Hello World</h1>;
+}
   

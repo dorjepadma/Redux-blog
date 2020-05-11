@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import reducer from './reducers/wordsReducer';
+import reducer from '../src/reducers/BlogReducer';
 
 export default createStore(
   reducer,
