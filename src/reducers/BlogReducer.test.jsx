@@ -1,4 +1,4 @@
-import { addBlog } from '../actions/BlogActions';
+import { addBlog, updateBlog } from '../actions/BlogActions';
 import reducer from './BlogReducer';
 
 describe('blog reducer', () => {
@@ -14,6 +14,29 @@ describe('blog reducer', () => {
       {
         title: 'How to become a millionaire',
         body: 'At a young age, invest 10% of your monthly earnings in the S&P 500'
+      }
+    ]);
+  });
+
+  it('handles the UPDATE_BLOG action', () => {
+    const state = [
+      {
+        title: 'How to become a millionaire',
+        body: 'At a young age, invest 10% of your monthly earnings in the S&P 500'
+      }
+    ];
+
+    const action = updateBlog(0, {
+      title: 'Quickly become a millionaire',
+      body: 'Marry a rich person'
+    });
+
+    const newState = reducer(state, action);
+
+    expect(newState).toEqual([
+      {
+        title: 'Quickly become a millionaire',
+        body: 'Marry a rich person'
       }
     ]);
   });

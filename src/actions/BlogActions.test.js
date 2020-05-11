@@ -18,7 +18,7 @@ describe('post a blog', () => {
   it('creates an UPDATE_Blog action', () => {
     const action = updateBlog(1, {
       title: 'How to become a millionaire',
-      body: 'At a young age, invest 10% of your monthly earnings in the S&P 500'
+      body: 'At a young age, invest 15% of your monthly earnings in the S&P 500'
     });
 
     expect(action).toEqual({
@@ -27,7 +27,7 @@ describe('post a blog', () => {
         index: 1,
         blog: {
           title: 'How to become a millionaire',
-          body: 'At a young age, invest 10% of your monthly earnings in the S&P 500'
+          body: 'At a young age, invest 15% of your monthly earnings in the S&P 500'
         }
       }
     });
