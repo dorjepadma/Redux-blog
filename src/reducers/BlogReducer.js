@@ -1,4 +1,4 @@
-import { ADD_BLOG, UPDATE_BLOG } from '../actions/BlogActions';
+import { ADD_BLOG, UPDATE_BLOG, DELETE_BLOG } from '../actions/BlogActions';
 
 const initialState = [];
 
@@ -11,5 +11,9 @@ export default function reducer(state = initialState, action) {
         if(i === action.payload.index) return action.payload.blog; 
         return blog;
       });
+    case DELETE_BLOG:
+      return state.filter((_, i) => i !== action.payload);
+    default:
+      return state;
   }
 }

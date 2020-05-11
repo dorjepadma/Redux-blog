@@ -11,3 +11,9 @@ export const updateBlog = (index, blog) => ({
     blog
   }
 });
+export const DELETE_BLOG = 'DELETE_BLOG';
+export const deleteBlog = index => ({
+  type: DELETE_BLOG,  
+  payload: index
+});
+

@@ -1,4 +1,4 @@
-import { addBlog, ADD_BLOG, updateBlog, UPDATE_BLOG } from './BlogActions';
+import { addBlog, ADD_BLOG, updateBlog, UPDATE_BLOG, deleteBlog, DELETE_BLOG } from './BlogActions';
 
 describe('post a blog', () => {
   it('creates an ADD_BLOG action', () => {
@@ -30,6 +30,14 @@ describe('post a blog', () => {
           body: 'At a young age, invest 15% of your monthly earnings in the S&P 500'
         }
       }
+    });
+  });
+  
+  it('creates a DELETE_BLOG method', () => {
+    const action = deleteBlog(3);
+    expect(action).toEqual({
+      type: DELETE_BLOG,
+      payload: 3
     });
   });
 });
