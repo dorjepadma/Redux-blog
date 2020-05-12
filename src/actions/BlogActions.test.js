@@ -4,21 +4,24 @@ describe('post a blog', () => {
   it('creates an ADD_BLOG action', () => {
     const action = addBlog({
       title: 'How to become a millionaire',
-      body: 'At a young age, invest 10% of your monthly earnings in the S&P 500'
+      body: 'At a young age, invest 10% of your monthly earnings in the S&P 500',
+      subject: 'wealth'
     });
 
     expect(action).toEqual({
       type: ADD_BLOG,
       payload: {
         title: 'How to become a millionaire',
-        body: 'At a young age, invest 10% of your monthly earnings in the S&P 500'
+        body: 'At a young age, invest 10% of your monthly earnings in the S&P 500',
+        subject: 'wealth'
       }
     });
   });
   it('creates an UPDATE_Blog action', () => {
     const action = updateBlog(1, {
       title: 'How to become a millionaire',
-      body: 'At a young age, invest 15% of your monthly earnings in the S&P 500'
+      body: 'At a young age, invest 15% of your monthly earnings in the S&P 500',
+      subject: 'wealth'
     });
 
     expect(action).toEqual({
@@ -27,12 +30,13 @@ describe('post a blog', () => {
         index: 1,
         blog: {
           title: 'How to become a millionaire',
-          body: 'At a young age, invest 15% of your monthly earnings in the S&P 500'
+          body: 'At a young age, invest 15% of your monthly earnings in the S&P 500',
+          subject: 'wealth'
         }
       }
     });
   });
-  
+
   it('creates a DELETE_BLOG method', () => {
     const action = deleteBlog(3);
     expect(action).toEqual({
